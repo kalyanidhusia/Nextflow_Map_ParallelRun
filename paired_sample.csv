@@ -1,0 +1,7 @@
+sample_id,fastq_1,fastq_2
+UHR_Rep1_ERCC,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/UHR_Rep1_ERCC_read1.fastq.gz,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/UHR_Rep1_ERCC_read2.fastq.gz
+UHR_Rep2_ERCC,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/UHR_Rep2_ERCC_read1.fastq.gz,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/UHR_Rep2_ERCC_read2.fastq.gz
+UHR_Rep3_ERCC,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/UHR_Rep3_ERCC_read1.fastq.gz,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/UHR_Rep3_ERCC_read2.fastq.gz
+HBR_Rep1_ERCC,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/HBR_Rep1_ERCC_read1.fastq.gz,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/HBR_Rep1_ERCC_read2.fastq.gz
+HBR_Rep2_ERCC,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/HBR_Rep2_ERCC_read1.fastq.gz,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/HBR_Rep2_ERCC_read2.fastq.gz
+HBR_Rep3_ERCC,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/HBR_Rep3_ERCC_read1.fastq.gz,/Users/dhusiakalyani/flowQC/NextflowQC/fastq/HBR_Rep3_ERCC_read2.fastq.gz
