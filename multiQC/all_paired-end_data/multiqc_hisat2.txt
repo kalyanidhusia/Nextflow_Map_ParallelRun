@@ -1,0 +1,7 @@
+Sample	paired_total	paired_aligned_none	paired_aligned_one	paired_aligned_multi	paired_aligned_discord_one	unpaired_total	unpaired_aligned_none	unpaired_aligned_one	unpaired_aligned_multi	overall_alignment_rate
+HBR_Rep1_ERCC_read1_val_1	118448	93	117476	564	315	186	125	55	6	99.95
+HBR_Rep2_ERCC_read1_val_1	144660	100	143369	755	436	200	138	59	3	99.95
+HBR_Rep3_ERCC_read1_val_1	129630	101	128563	622	344	202	131	63	8	99.95
+UHR_Rep1_ERCC_read1_val_1	226970	506	223178	2988	298	1012	258	626	128	99.94
+UHR_Rep2_ERCC_read1_val_1	162006	285	158729	2524	468	570	192	326	52	99.94
+UHR_Rep3_ERCC_read1_val_1	185146	319	181945	2381	501	638	206	352	80	99.94

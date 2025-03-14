@@ -1,0 +1,4 @@
+[2025-03-14 15:55:07,328] multiqc.core.file_search                           [INFO   ]  Search path: /Users/dhusiakalyani/MapMulti/Nextflow_Map_ParallelRun/work/ee/94c7e143de1daa9c0e8039dab10081
+[2025-03-14 15:55:07,980] multiqc.modules.hisat2.hisat2                      [INFO   ]  Found 6 reports
+[2025-03-14 15:55:08,056] multiqc.modules.cutadapt.cutadapt                  [INFO   ]  Found 12 reports
+[2025-03-14 15:55:08,168] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 24 reports
