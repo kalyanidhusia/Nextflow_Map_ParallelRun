@@ -1,4 +1,5 @@
 params.input_csv = "paired_sample.csv"
+params.outdir    = "fastQC"
 
 // Create a channel from the CSV
 Channel.fromPath(params.input_csv)
@@ -9,12 +10,16 @@ Channel.fromPath(params.input_csv)
     .set { samples_ch }
 
 // Check the channel content
-samples.view { pair ->
+samples_ch.view { pair ->
     println("Sample ID: ${pair[0]}, Read1: ${pair[1]}, Read2: ${pair[2]}")
 }
 
 // Example process that would use these inputs
 process FASTQC {
+    tag "${sample_id}"
+
+    publishDir "${params.outdir}", mode: 'copy'
+
     input:
     tuple val(sample_id), path(read1), path(read2)
 
@@ -23,10 +28,10 @@ process FASTQC {
 
     script:
     """
-    fastqc ${read1} ${read2}
+    fastqc ${read1} ${read2} -o .
     """
 }
 
 workflow {
-    samples | FASTQC
+    samples_ch | FASTQC
 }
