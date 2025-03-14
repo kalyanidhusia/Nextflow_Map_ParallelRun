@@ -54,8 +54,8 @@ Clearly managed channel definitions to handle paired FASTQ files.
 Addressed issues with processes failing silently by incorporating print statements and debugging via Nextflow's .command.sh and .command.log.
 Identified a critical missing dependency error (trim_galore, exit status 127).
 Decided to temporarily remove the problematic TRIM_GALORE step from the pipeline until a suitable environment setup is available.
-
+Trim_galore is not implemented back on!
 
 -Finalized Stable Pipeline:
 
-Produced a simplified but stable RNAseq Nextflow workflow (without trimming), ensuring reliable execution and accurate file placement for subsequent analysis.
+Produced a simplified but stable RNAseq Nextflow workflow, ensuring reliable execution and accurate file placement for subsequent analysis.
