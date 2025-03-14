@@ -1,0 +1,90 @@
+digraph "pipeline_dag" {
+v0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v0 -> v1;
+
+v1 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="splitCsv"];
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v1 -> v2;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v2 -> v3 [label="read_ch"];
+
+v3 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v4 [shape=point];
+v3 -> v4;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v5 [label="FASTQC"];
+v2 -> v5 [label="read_ch"];
+
+v5 [label="FASTQC"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v12;
+
+v5 [label="FASTQC"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v5 -> v12;
+
+v2 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="map"];
+v6 [label="TRIM_GALORE"];
+v2 -> v6 [label="read_ch"];
+
+v6 [label="TRIM_GALORE"];
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v6 -> v7 [label="trimmed_reads_ch"];
+
+v6 [label="TRIM_GALORE"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v12;
+
+v6 [label="TRIM_GALORE"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v12;
+
+v6 [label="TRIM_GALORE"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v6 -> v12;
+
+v7 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="view"];
+v8 [shape=point];
+v7 -> v8;
+
+v6 [label="TRIM_GALORE"];
+v10 [label="HISAT2_ALIGN"];
+v6 -> v10 [label="trimmed_reads_ch"];
+
+v9 [shape=point,label="",fixedsize=true,width=0.1];
+v10 [label="HISAT2_ALIGN"];
+v9 -> v10 [label="index_zip"];
+
+v10 [label="HISAT2_ALIGN"];
+v11 [shape=point];
+v10 -> v11;
+
+v10 [label="HISAT2_ALIGN"];
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v10 -> v12;
+
+v12 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="mix"];
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v12 -> v13;
+
+v13 [shape=circle,label="",fixedsize=true,width=0.1,xlabel="collect"];
+v15 [label="MULTIQC"];
+v13 -> v15;
+
+v14 [shape=point,label="",fixedsize=true,width=0.1];
+v15 [label="MULTIQC"];
+v14 -> v15 [label="output_name"];
+
+v15 [label="MULTIQC"];
+v17 [shape=point];
+v15 -> v17;
+
+v15 [label="MULTIQC"];
+v16 [shape=point];
+v15 -> v16;
+
+}
