@@ -1,9 +1,9 @@
 # Nextflow_Map_ParallelRun
 Index path issues hinder FastQ mapping, especially in Nextflow. We'll solve this, verifying paths pre-mapping, and making the path configurable. Parallel processing accelerates mapping, ensures reproducibility, and scales efficiently for multiple paired fastq..
 
-Folder structure:
+Current Workflow Structure
 ```
-|____LICENSE
+Nextflow_Map_ParallelRun
 |____module
 | |____multiqc.nf
 | |____fastqc.nf
@@ -27,4 +27,56 @@ Folder structure:
 | |____ ...
 ```
 
+Current Workflow Structure
 
+rnaseq/
+├── modules/
+│   ├── fastqc.nf
+│   ├── trim_galore.nf
+│   ├── hisat2_align.nf
+│   └── multiqc.nf
+├── data/
+│   └── paired_sample.csv
+├── genome_index.tar.gz
+└── script5.nf
+
+Running the Workflow
+
+`nextflow run pipeline_pairedMap.nf`
+
+DAG Visualization
+
+To visualize the workflow DAG, run:
+
+`nextflow run pipeline_pairedMap.nf -with-dag pipeline_dag.png`
+
+Debugging and Logs
+
+Check Nextflow execution logs for detailed troubleshooting:
+
+Tasks Completed:
+
+Created a local Nextflow project to practice genome indexing tasks.
+Practiced workflow creation and execution.
+GitHub Repository Management:
+
+Set up a GitHub repository (nextflow-genome-indexing) to maintain Nextflow scripts.
+Configured Git locally and resolved synchronization issues with GitHub.
+Opened and managed multiple issues (#1, #2, #3, #4) to document and resolve pipeline errors and improvements.
+Genome Indexing with BWA:
+
+Created a Nextflow process to index reference genomes using BWA.
+Ensured output index files (.bwt, .ann, .pac, .sa) are correctly placed in the desired directory (index_dir) using the publishDir directive.
+Added debug statements to verify file paths and process execution.
+Paired-End RNAseq Workflow:
+
+Adapted the existing single-end RNAseq Nextflow pipeline (rnaseq.nf) to handle paired-end data, modifying input and output channels accordingly.
+Clearly managed channel definitions to handle paired FASTQ files.
+Error Handling and Debugging:
+
+Addressed issues with processes failing silently by incorporating print statements and debugging via Nextflow's .command.sh and .command.log.
+Identified a critical missing dependency error (trim_galore, exit status 127).
+Decided to temporarily remove the problematic TRIM_GALORE step from the pipeline until a suitable environment setup is available.
+Finalized Stable Pipeline:
+
+Produced a simplified but stable RNAseq Nextflow workflow (without trimming), ensuring reliable execution and accurate file placement for subsequent analysis.
