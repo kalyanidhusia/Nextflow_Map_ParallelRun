@@ -1,6 +1,6 @@
 process HISAT2_ALIGN {
 
-    publishDir "results/align", mode: 'copy'
+    publishDir "align", mode: 'copy'
 
     input:
     tuple path(read1), path(read2)
