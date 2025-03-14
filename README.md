@@ -35,6 +35,17 @@ DAG Visualization
 To visualize the workflow DAG, run:
 
 `nextflow run pipeline_pairedMap.nf -with-dag pipeline_dag.png`
+```
+nextflow run pipeline_pairedMap.nf -with-dag pipeline_dag.dot && \
+dot -Tpng \
+  -Gbgcolor=white \
+  -Ncolor="#2c7fb8" \
+  -Nfontcolor="#253494" \
+  -Nstyle="filled,bold" \
+  -Nfillcolor="#edf8b1" \
+  -Ecolor="#41b6c4" \
+  pipeline_dag.dot -o pipeline_dag_colored.png
+```
 
 Tasks Completed:
 
